@@ -8,6 +8,7 @@ const pool = mysql.createPool({
   database: 'cholonjanina'
 });
 */
+
 const pool = mysql.createPool({
   host: 'b6xjmi7j0ue8hwkunxuy-mysql.services.clever-cloud.com',
   user: 'upfmpx4fksb0n2rb',

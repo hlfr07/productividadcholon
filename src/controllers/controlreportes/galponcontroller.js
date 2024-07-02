@@ -5,6 +5,7 @@ const util = require("util");
 const vistareporgalpon = async (req, res) => {
   const nombre = req.session.user.nombreusuario;
   const perfil = req.session.user.nombreperfil;
+  const idperfil = req.session.user.idperfil;
 
   // Consulta para obtener los datos generales de los galpones
   const sqlDatosGalpon = `
@@ -47,7 +48,8 @@ const vistareporgalpon = async (req, res) => {
       galpon,
       nombre,
       perfil,
-      fechas
+      fechas,
+      idperfil
     });
   } catch (error) {
     console.error('Error en la función vistareporgalpon:', error);

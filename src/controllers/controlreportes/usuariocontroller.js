@@ -3,6 +3,7 @@ const bcrypt=require("bcryptjs");
 const vistareporusuarios = async (req, res) => {
 const nombre = req.session.user.nombreusuario;
 const perfil = req.session.user.nombreperfil;
+const idperfil = req.session.user.idperfil;
    // Consulta SQL para obtener perfiles
    const sql = 'SELECT usuario.dni, usuario.nombre, usuario.correo, perfil.perfil, usuario.estado FROM usuario JOIN perfil ON usuario.idperfil = perfil.idperfil';
 
@@ -17,7 +18,7 @@ const perfil = req.session.user.nombreperfil;
      }
      // Envía los resultados de la consulta a la vista
      res.render('vistaadmin/reportes/reporusuarios', { reporusuarios: results ,  nombre: nombre,
-      perfil: perfil});
+      perfil: perfil, idperfil: idperfil});
    });
    };
 
