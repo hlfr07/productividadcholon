@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>CONTROL GALPON
+  </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/src/views/img/icono.ico">
+  <!-- Custom fonts for this template-->
+  <link href="/src/boostrapdiseñoadmin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link rel="stylesheet" href="/src/control/assets/css/fontawesome.css">
+  <link rel="stylesheet" href="/src/control/assets/css/templatemo-cyborg-gaming.css">
+  <link rel="stylesheet" href="/src/control/assets/css/owl.css">
+  <link rel="stylesheet" href="/src/control/assets/css/animate.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <link href="/src/boostrapdiseñoadmin/css/sb-admin-2.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <style>
+    .cd-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0 -10px;
+    }
+
+    .cd-timeline-block {
+      margin-right: -1150px;
+    }
+
+    .most-popular {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .col {
+      width: 1500px;
+      margin: 10px;
+    }
+
+    .card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card-img-top {
+      width: 100%;
+      height: auto;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .card-body {
+      text-align: center;
+      padding: 10px;
+    }
+
+    .card-body h2 {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+      color: #292929;
+    }
+
+    .card-text {
+      font-size: 1rem;
+      color: #000000;
+    }
+
+    .btn-group {
+      margin-top: 5px;
+    }
+
+    h2 {
+      color: #4a4a4a;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    h5 {
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    .btn {
+      margin: 0 8px;
+      font-size: 1rem;
+      border-radius: 5px;
+    }
+
+    .btn-outline-secondary {
+      color: #555;
+      border-color: #555;
+    }
+
+    .btn-outline-secondary:hover {
+      color: #fff;
+      background-color: #555;
+    }
+
+
+    #myModal {
+      font-family: 'Roboto', sans-serif;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .modal-content {
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .modal-header {
+      background-color: #e18d2c;
+      color: #fff;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .modal-title {
+      font-size: 2rem;
+    }
+
+    .modal-body {
+      padding: 20px;
+    }
+
+    .modal-body span {
+      display: inline-block;
+      width: 120px;
+      font-weight: bold;
+      color: #555;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .modal-body p span {
+      color: #333;
+    }
+
+    .modal-body p:hover span {
+      color: #e18d2c;
+    }
+
+    .close {
+      color: #fff;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .close:hover {
+      color: #fff;
+      transform: scale(1.2);
+    }
+
+    .close:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .close:active {
+      color: #fff;
+    }
+
+    .close span {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .close span:hover {
+      cursor: pointer;
+    }
+
+    .close span:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  </style>
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <%- include('../plantilla/listamodulos') %>
+      <!-- End of Sidebar -->
+
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+          <!-- Topbar -->
+          <%- include('../plantilla/navbar') %>
+            <div class="text-center">
+              <h1>CONTROL DE GALPON </h1>
+            </div>
+            <!-- End of Topbar -->
+            <section id="filtrardetallecompra">
+              <hr>
+              <div class="row">
+                <% galpon.forEach((galpon, index)=> { %>
+                  <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card shadow-sm text-center h-100 ">
+                      <h2 class="card-header">GALPON: <%= galpon.nombregalpon %>
+                      </h2>
+                      <img src="/src/control/assets/images/pollos.jpg"
+                        class="card-img-top w-100 rounded mx-auto d-block bordered-image" alt="">
+                      <div class="card-body ">
+                        <p class="card-text">POLLOS CHOLON</p>
+                        <div class="d-flex justify-content-center align-items-center ">
+                          <% control.forEach((controlgalpon, controlIndex)=> { %>
+                            <% if (controlgalpon.idgalpon===galpon.idgalpon) { %>
+                              <div class="me-2">
+                                <a class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                                  data-bs-target="#myModal" onclick="acavisualiza(event)"
+                                  data-idcontrolgalpon="<%= controlgalpon.idcontrolgalpon %>"
+                                  data-nombregalpon="<%= controlgalpon.nombregalpon %>"
+                                  data-cantidadpollo="<%= controlgalpon.cantidadpollo %>"
+                                  data-fechallegada="<%= controlgalpon.fechaentrada %>"
+                                  data-fecha="<%= controlgalpon.fecha %>"
+                                  data-nombre-producto="<%= controlgalpon.nombre_producto %>"
+                                  data-mortalidad="<%= controlgalpon.mortalidad %>"
+                                  data-descripcion="<%= controlgalpon.descripcion %>">
+                                  Visualizar
+                                </a>
+                              </div>
+                              <% if (idperfil==1 || idperfil==4 ) { %>
+                              <div>
+                                <button type="button" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                  onclick="acaregistra(<%= controlgalpon.idgalpon %>, '<%= controlgalpon.fechaentrada %>', '<%= controlgalpon.nombre_producto %>', <%= controlgalpon.cantidadpollo %>)"
+                                  class="btn btn-sm btn-outline-secondary">Registrar</button>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <li><a class="dropdown-item" data-bs-dismiss="modal" data-bs-toggle="modal"
+                                      data-bs-target="#exampleModalgal">CONTROL
+                                      GALPON</a></li>
+                                  <li><a class="dropdown-item" data-bs-dismiss="modal" data-bs-toggle="modal"
+                                      data-bs-target="#exampleModalali">CONTROL
+                                      ALIMENTO</a></li>
+                                  <li><a class="dropdown-item" data-bs-dismiss="modal" data-bs-toggle="modal"
+                                      data-bs-target="#exampleModalmedi">CONTROL
+                                      MEDICAMENTO</a></li>
+                                  <li><a class="dropdown-item" data-bs-dismiss="modal" data-bs-toggle="modal"
+                                      data-bs-target="#exampleModaldiag">CONTROL
+                                      DIAGNOSTICO</a></li>
+                                </ul>
+                              </div>
+                              <% } %>
+                              <% } %>
+                                <% }); %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <% }); %>
+              </div>
+            </section>
+
+            <!-- Modal Bootstrap -->
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Detalles del Galpón: </h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="">
+                      <p><strong>FECHA DE INGRESO</strong>
+                      <div id="modal-fecha"></div>
+                      </p>
+                    </div>
+                    <hr>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <p><strong>GALPON:</strong>
+                        <div id="modal-nombre"></div>
+                        </p>
+                        <p><strong>POLLO:</strong>
+                        <div id="modal-producto"></div>
+                        </p>
+                        <p><strong>CANTIDAD:</strong>
+                        <div id="modal-cantidad"></div>
+                        </p>
+                      </div>
+                      <div class="col-md-6">
+                        <p><strong>FECHA CONTROL:</strong>
+                        <div id="modal-fechacontrol"></div>
+                        </p>
+                        <p><strong>MORTALIDAD:</strong>
+                        <div id="modal-mortalidad"></div>
+                        </p>
+                        <p><strong>DESCRIPCION:</strong>
+                        <div id="modal-descripcion"></div>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal CONTROL GALPON -->
+            <div class="modal fade" id="exampleModalgal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">CONTROL DE GALPOL</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="right-container">
+                      <form id="myForm">
+                        <div class="mb-3" hidden>
+                          <label for="idgalpon" class="form-label">ID Galpón</label>
+                          <input type="text" class="form-control" id="idgalpon" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="producto" class="form-label">Producto</label>
+                          <input type="text" class="form-control" id="producto" readonly>
+                        </div>
+                        <div class="mb-3" hidden>
+                          <label for="fechaentrada" class="form-label">Fecha de Entrada</label>
+                          <input type="date" class="form-control" id="fechaentrada" readonly required>
+                        </div>
+                        <div class="mb-3" hidden>
+                          <label for="cantidadpollo" class="form-label">Cantidad de Pollo</label>
+                          <input type="number" class="form-control" id="cantidadpollo"
+                            onchange="actualizarTotalPollos()" readonly>
+                        </div>
+                        <div class="mb-3">
+                          <label for="totalpollos" class="form-label">Cantidad de Pollo</label>
+                          <input type="number" class="form-control" id="totalpollos" readonly>
+                        </div>
+                        <div class="mb-3">
+                          <label for="mortalidad" class="form-label">Mortalidad</label>
+                          <input type="number" class="form-control" id="mortalidad" oninput="actualizarTotalPollos()"
+                            required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="descripcion" class="form-label">Descripción</label>
+                          <textarea class="form-control" id="descripcion" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="fecha" class="form-label">Fecha</label>
+                          <input type="date" class="form-control" id="fecha" required>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" onclick="registrarControlGalpon()">Guardar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Modal CONTROL ALIMENTO -->
+            <div class="modal fade" id="exampleModalali" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">CONTROL DE ALIMENTO</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="right-container">
+                      <form id="controlAlimentoForm"> <!-- Formulario para enviar los datos -->
+                        <div class="mb-3" hidden>
+                          <label for="idgalpon" class="form-label">ID Galpon</label>
+                          <input type="text" class="form-control" id="idgalpon1" name="idgalpon" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="producto" class="form-label">Producto</label>
+                          <input type="text" class="form-control" id="producto1" name="producto" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="cantidad" class="form-label">Cantidad</label>
+                          <input type="number" class="form-control" id="cantidad1" name="cantidad" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="descripcion" class="form-label">Descripción</label>
+                          <textarea class="form-control" id="descripcion1" name="descripcion" rows="3"
+                            required></textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="idunidad" class="form-label">ID Unidad</label>
+                          <select id="idunidad1" class="form-control" name="idunidad">
+                            <% unidadali.forEach(function(unidad) { %>
+                              <option value="<%= unidad.idunidad %>">
+                                <%= unidad.nombre_unidad %>
+                              </option>
+                              <% }); %>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label for="fecha" class="form-label">Fecha</label>
+                          <input type="date" class="form-control" id="fecha1" name="fecha" required>
+                        </div>
+                        <div class="mb-3" hidden>
+                          <label for="fechaentrada" class="form-label">Fecha de entrada</label>
+                          <input type="date" class="form-control" id="fechaentrada1" name="fechaentrada" required>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                      data-bs-dismiss="modal">Close</button>
+                    <button type="button" onclick="registrarControlAlimento()" class="btn btn-primary">Guardar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Modal CONTROL MEDICAMENTO -->
+            <div class="modal fade" id="exampleModalmedi" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">CONTROL DE MEDICAMENTO</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="right-container">
+                      <form id="controlAlimentoForm"> <!-- Formulario para enviar los datos -->
+                        <div class="mb-3" hidden>
+                          <label for="idgalpon" class="form-label">ID Galpon</label>
+                          <input type="text" class="form-control" id="idgalpon2" name="idgalpon" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="producto" class="form-label">Producto</label>
+                          <input type="text" class="form-control" id="producto2" name="producto" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="cantidad" class="form-label">Cantidad</label>
+                          <input type="number" class="form-control" id="cantidad2" name="cantidad" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="descripcion" class="form-label">Descripción</label>
+                          <textarea class="form-control" id="descripcion2" name="descripcion" rows="3"
+                            required></textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="idunidad" class="form-label">ID Unidad</label>
+                          <select id="idunidad2" class="form-control" name="idunidad">
+                            <% unidadmedi.forEach(function(unidad) { %>
+                              <option value="<%= unidad.idunidad %>">
+                                <%= unidad.nombre_unidad %>
+                              </option>
+                              <% }); %>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label for="fecha" class="form-label">Fecha</label>
+                          <input type="date" class="form-control" id="fecha2" name="fecha" required>
+                        </div>
+                        <div class="mb-3" hidden>
+                          <label for="fechaentrada" class="form-label">Fecha de entrada</label>
+                          <input type="date" class="form-control" id="fechaentrada2" name="fechaentrada" required>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                      data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary"
+                      onclick="registrarControlMedicammento()">Guardar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Modal CONTROL DIAGNOSTICO -->
+            <div class="modal fade" id="exampleModaldiag" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">CONTROL DE DIAGNOSTICO</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="right-container">
+                      <form id="controlDiagnosticoForm"> <!-- Formulario para enviar los datos -->
+                        <div class="mb-3">
+                          <label for="idgalponDiag" class="form-label">ID Galpon</label>
+                          <input type="text" class="form-control" id="idgalponDiag" name="idgalponDiag" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="descripcionDiag" class="form-label">Descripción</label>
+                          <textarea class="form-control" id="descripcionDiag" name="descripcionDiag" rows="3"
+                            required></textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="recetaDiag" class="form-label">Receta</label>
+                          <textarea class="form-control" id="recetaDiag" name="recetaDiag" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="fechaentradaDiag" class="form-label">Fecha de entrada</label>
+                          <input type="date" class="form-control" id="fechaentradaDiag" name="fechaentradaDiag"
+                            required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="fechaDiag" class="form-label">Fecha</label>
+                          <input type="date" class="form-control" id="fechaDiag" name="fechaDiag" required>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                      data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary"
+                      onclick="registrarControlDiagnostico()">Guardar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container-fluid overflow-auto">
+
+
+              <!-- /.container-fluid -->
+              <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                  <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; UNSM 2023</span>
+                  </div>
+                </div>
+              </footer>
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+      </div>
+      <!-- End of Page Wrapper -->
+
+      <!-- Scroll to Top Button-->
+      <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+      </a>
+
+      <!-- Logout Modal-->
+      <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+              <a class="btn btn-primary" href="login.html">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script>
+        //REGISTRAR
+        // Función para registrar el control de galpón
+        function registrarControlGalpon() {
+          const idgalpon = document.getElementById('idgalpon').value;
+          const producto = document.getElementById('producto').value;
+          const cantidadpollo = document.getElementById('totalpollos').value;
+          const descripcion = document.getElementById('descripcion').value;
+          const fechaentrada = document.getElementById('fechaentrada').value;
+          const mortalidad = document.getElementById('mortalidad').value;
+          const fecha = document.getElementById('fecha').value;
+          const idunidad = 1;
+
+          // Verificar que no haya datos null
+          if (!idgalpon || !producto || !cantidadpollo || !descripcion || !fechaentrada || !mortalidad || !fecha || !idunidad) {
+            Swal.fire({
+              title: "Campos vacíos",
+              text: "Por favor, complete todos los campos!",
+              icon: "question"
+            });
+            return;
+          }
+
+          // Crear objeto formData con los datos del formulario
+          const formData = {
+            idgalpon,
+            producto,
+            cantidadpollo: cantidadpollo, // Convertir a número entero si es necesario
+            descripcion,
+            fechaentrada,
+            mortalidad: mortalidad, // Convertir a número entero si es necesario
+            fecha,
+            idunidad,
+            estado: 1, // Convertir a número entero si es necesario
+          };
+
+          // Realizar la solicitud POST con Axios
+          axios.post('/admin/controlpollos', formData)
+            .then((response) => {
+              console.log('Respuesta del servidor:', response.data);
+              Swal.fire({
+                icon: "success",
+                title: "Registro exitoso!",
+                showConfirmButton: false,
+                timer: 1500
+              });
+              setTimeout(function () {
+                window.location.href = '/admin/prueba';
+              }, 1500);
+            })
+            .catch((error) => {
+              console.error('Error al enviar datos al servidor:', error);
+              alert('Error al registrar el control de galpón');
+            });
+        }
+
+        function registrarControlAlimento() {
+          // Obtener los valores de los campos
+          const idgalpon = document.getElementById('idgalpon1').value;
+          const producto = document.getElementById('producto1').value;
+          const cantidad = document.getElementById('cantidad1').value;
+          const descripcion = document.getElementById('descripcion1').value;
+          const fechaentrada = document.getElementById('fechaentrada1').value;
+          const fecha = document.getElementById('fecha1').value;
+          const idunidad = document.getElementById('idunidad1').value;
+          const estado = 1;
+
+          // Verificar que no haya datos null o vacíos
+          if (!idgalpon || !producto || !cantidad || !descripcion || !fechaentrada || !fecha || !idunidad || !estado) {
+            Swal.fire({
+              title: "Campos vacíos",
+              text: "Por favor, complete todos los campos!",
+              icon: "question"
+            });
+            return;
+          }
+
+          // Crear objeto con los datos del formulario
+          const formData = {
+            idgalpon,
+            producto,
+            cantidad: cantidad, // Convertir a número entero si es necesario
+            descripcion,
+            fechaentrada,
+            fecha,
+            idunidad,
+            estado,
+          };
+
+          // Realizar la solicitud POST con Axios
+          axios.post('/admin/controlalimento', formData)
+            .then(response => {
+              console.log('Respuesta del servidor:', response.data);
+              Swal.fire({
+                icon: "success",
+                title: "Registro exitoso!",
+                showConfirmButton: false,
+                timer: 1500
+              });
+              setTimeout(function () {
+                window.location.href = '/admin/prueba';
+              }, 1500);
+            })
+            .catch(error => {
+              console.error('Error al enviar datos al servidor:', error);
+              alert('Error al registrar el control de alimento');
+            });
+        }
+
+        function registrarControlMedicammento() {
+          // Obtener los valores de los campos
+          const idgalpon = document.getElementById('idgalpon2').value;
+          const producto = document.getElementById('producto2').value;
+          const cantidad = document.getElementById('cantidad2').value;
+          const descripcion = document.getElementById('descripcion2').value;
+          const fechaentrada = document.getElementById('fechaentrada2').value;
+          const fecha = document.getElementById('fecha2').value;
+          const idunidad = document.getElementById('idunidad2').value;
+          const estado = 1;
+
+          // Verificar que no haya datos null o vacíos
+          if (!idgalpon || !producto || !cantidad || !descripcion || !fechaentrada || !fecha || !idunidad || !estado) {
+            Swal.fire({
+              title: "Campos vacíos",
+              text: "Por favor, complete todos los campos!",
+              icon: "question"
+            });
+            return;
+          }
+
+          // Crear objeto con los datos del formulario
+          const formData = {
+            idgalpon,
+            producto,
+            cantidad: cantidad, // Convertir a número entero si es necesario
+            descripcion,
+            fechaentrada,
+            fecha,
+            idunidad,
+            estado,
+          };
+
+          // Realizar la solicitud POST con Axios
+          axios.post('/admin/controlmedicamento', formData)
+            .then(response => {
+              console.log('Respuesta del servidor:', response.data);
+              Swal.fire({
+                icon: "success",
+                title: "Registro exitoso!",
+                showConfirmButton: false,
+                timer: 1500
+              });
+              setTimeout(function () {
+                window.location.href = '/admin/prueba';
+              }, 1500);
+            })
+            .catch(error => {
+              console.error('Error al enviar datos al servidor:', error);
+              alert('Error al registrar el control de alimento');
+            });
+        }
+
+        function registrarControlDiagnostico() {
+          // Obtener los valores de los campos
+          const idgalpon = document.getElementById('idgalponDiag').value;
+          const descripcion = document.getElementById('descripcionDiag').value;
+          const receta = document.getElementById('recetaDiag').value;
+          const fechaentrada = document.getElementById('fechaentradaDiag').value;
+          const fecha = document.getElementById('fechaDiag').value;
+
+          // Verificar que no haya datos null o vacíos
+          if (!idgalpon || !descripcion || !receta || !fechaentrada || !fecha) {
+            Swal.fire({
+              title: "Campos vacíos",
+              text: "Por favor, complete todos los campos!",
+              icon: "question"
+            });
+            return;
+          }
+
+          // Crear objeto con los datos del formulario
+          const formData = {
+            idgalpon,
+            descripcion,
+            receta,
+            fechaentrada,
+            fecha,
+            estado: 1,
+          };
+
+          // Realizar la solicitud POST con Axios
+          axios.post('/admin/controldiagnostico', formData)
+            .then(response => {
+              console.log('Respuesta del servidor:', response.data);
+              Swal.fire({
+                icon: "success",
+                title: "Registro exitoso!",
+                showConfirmButton: false,
+                timer: 1500
+              });
+              setTimeout(function () {
+                window.location.href = '/admin/prueba';
+              }, 1500);
+            })
+            .catch(error => {
+              console.error('Error al enviar datos al servidor:', error);
+              alert('Error al registrar el control de diagnóstico');
+            });
+        }
+
+        function acaregistra(idgalpon, fechaentrada, producto, cantidad) {
+          console.log(fechaentrada);
+          document.getElementById('idgalpon').value = idgalpon;
+          document.getElementById('fechaentrada').value = fechaentrada;
+          document.getElementById('idgalpon1').value = idgalpon;
+          document.getElementById('fechaentrada1').value = fechaentrada;
+          document.getElementById('idgalpon2').value = idgalpon;
+          document.getElementById('fechaentrada2').value = fechaentrada;
+          document.getElementById('idgalponDiag').value = idgalpon;
+          document.getElementById('fechaentradaDiag').value = fechaentrada;
+          document.getElementById('producto').value = producto;
+          document.getElementById('cantidadpollo').value = cantidad;
+          document.getElementById('totalpollos').value = cantidad;
+          console.log(idgalpon);
+        }
+
+        //VISUALIZAR
+        function acavisualiza(event) {
+          var button = event.currentTarget;
+
+          var nombreGalpon = button.getAttribute("data-nombregalpon");
+          var cantidadPollo = button.getAttribute("data-cantidadpollo");
+          var fechaLlegada = button.getAttribute("data-fechallegada");
+          var fecha = button.getAttribute("data-fecha");
+          var nombreProducto = button.getAttribute("data-nombre-producto");
+          var mortalidad = button.getAttribute("data-mortalidad");
+          var descripcion = button.getAttribute("data-descripcion");
+
+          document.getElementById("modal-nombre").textContent = nombreGalpon;
+          document.getElementById("modal-cantidad").textContent = cantidadPollo;
+          document.getElementById("modal-fecha").textContent = fechaLlegada;
+          document.getElementById("modal-fechacontrol").textContent = fecha;
+          document.getElementById("modal-producto").textContent = nombreProducto;
+          document.getElementById("modal-mortalidad").textContent = mortalidad;
+          document.getElementById("modal-descripcion").textContent = descripcion;
+        }
+
+        // Función para actualizar el total de pollos en tiempo real
+        // Función para actualizar el total de pollos en tiempo real
+        function actualizarTotalPollos() {
+          const cantidadpollo = document.getElementById('cantidadpollo').value;
+          const mortalidad = document.getElementById('mortalidad').value;
+          const totalpollos = document.getElementById('totalpollos');
+
+          if (cantidadpollo && mortalidad) {
+            totalpollos.value = parseInt(cantidadpollo) - parseInt(mortalidad);
+          } else {
+            totalpollos.value = cantidadpollo;
+          }
+        }
+
+
+      </script>
+
+      <!-- Bootstrap core JavaScript-->
+      <script src="/src/boostrapdiseñoadmin/vendor/jquery/jquery.min.js"></script>
+      <script src="/src/boostrapdiseñoadmin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+      <script src="/src/control/vendor/jquery/jquery.min.js"></script>
+      <script src="/src/control/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+      <script src="/src/control/assets/js/isotope.min.js"></script>
+      <script src="/src/control/assets/js/owl-carousel.js"></script>
+      <script src="/src/control/assets/js/tabs.js"></script>
+      <script src="/src/control/assets/js/popup.js"></script>
+      <script src="/src/control/assets/js/custom.js"></script>
+
+      <!-- Core plugin JavaScript-->
+      <script src="/src/boostrapdiseñoadmin/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+      <!-- Custom scripts for all pages-->
+      <script src="/src/boostrapdiseñoadmin/js/sb-admin-2.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</body>
+
+</html>
