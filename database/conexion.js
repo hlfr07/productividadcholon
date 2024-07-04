@@ -17,5 +17,6 @@ const pool = mysql.createPool({
   database: 'b6xjmi7j0ue8hwkunxuy' 
 });
 
+
 // Exporta el pool para que pueda ser utilizado desde otros módulos
 module.exports = pool;

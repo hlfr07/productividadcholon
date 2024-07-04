@@ -4,6 +4,7 @@ const vistasegpasword = async (req, res) => {
   const nombre = req.session.user.nombreusuario;
   const perfil = req.session.user.nombreperfil;
   const idperfil = req.session.user.idperfil;
+  const idusuario = req.session.user.idusuario;
 
      // Consulta SQL 
   const sql = `SELECT usuario.*, perfil.perfil
@@ -23,7 +24,7 @@ WHERE usuario.estado=1;
 
     // Envía los resultados
     res.render('vistaadmin/seguridad/segrecuperapassword', { segrecuperapassword: results , nombre: nombre,
-      perfil: perfil, idperfil: idperfil});
+      perfil: perfil, idperfil: idperfil, idusuario: idusuario});
   });
   };
 
